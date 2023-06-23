@@ -1,27 +1,30 @@
-export default function handler(req, res) {  
-    if(req.method === 'POST') {
-      console.log('email POST')
-       
-      const msg = {
-        to: req.body.email,
-        from: 'kazuhideizawa@gmail.com',
-        subject: 'Thank you for your message',
-        text: 'I received the email. Back you soon!' + req.body.message,
-        html: 'I received the email. Back you soon!' + req.body.message,
-      };
-      /*
-      (async () => {
-        try {
-          await sgMail.send(msg);
-        } catch (error) {
-          console.error(error);
-          if (error.response) {
-            console.error(error.response.body)
-          }
-        }
-      })();*/
-   
-    }    
-    res.status(200)
+import nodemailer from 'nodemailer';
 
+export default async function sendGmail(req, res) {
+  try {
+    const transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.APP_PASSWORD,
+      },
+    });
+
+    const toHostMailData = {
+      from: req.body.email,
+      to: process.env.GMAIL_TO,
+      subject: "Message from ContactForm",
+      text: `${req.body.message} sent from ${req.body.email}`,
+    };
+
+    await transporter.sendMail(toHostMailData);
+    console.log("Email sent successfully");
+    
+    return res.status(200).end();
+  } catch (error) {
+    console.log("Error sending email:", error);
+    return res.status(500).json({ error: "Failed to send email" });
   }
+}

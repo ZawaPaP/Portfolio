@@ -1,8 +1,8 @@
 export default function Form() {
-    const registerUser = async event => {
+    const sendMail = async event => {
       event.preventDefault()
-   
-      const res = await fetch('/api/send', {
+
+      await fetch('/api/send', {
         body: JSON.stringify({
           email: event.target.email.value,
           message: event.target.message.value
@@ -11,21 +11,21 @@ export default function Form() {
           'Content-Type': 'application/json'
         },
         method: 'POST'
-      })
-   
-      const result = await res.json()
-    }
-   
+      }).then((res) => {
+        if (res.status === 200) console.log("Success!");
+      });
+    };
+
     return (
       <div className="container mt-5">
-        <form onSubmit={registerUser}>
+        <form onSubmit={sendMail}>
           <div className="mb-3">
             <label htmlFor="email">email address</label>
-            <input id="email" name="email" type="email" className="form-control" placeholder="name@example.com"/>
+            <input id="email" name="email" type="email" className="form-control" placeholder="name@example.com" required/>
           </div>
           <div className="mb-3">
             <label htmlFor="message" className="form-label"></label>
-            <textarea id="message" name="message" className="form-control" rows="3">Text</textarea>
+            <textarea id="message" name="message" className="form-control" required rows="3">Message</textarea>
           </div>
           <div className="mb-3">
             <button type="submit" className="btn btn-primary">Submit</button>
