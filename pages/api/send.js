@@ -20,11 +20,9 @@ export default async function sendGmail(req, res) {
     };
 
     await transporter.sendMail(toHostMailData);
-    console.log("Email sent successfully");
     
     return res.status(200).end();
   } catch (error) {
-    console.log("Error sending email:", error);
     return res.status(500).json({ error: "Failed to send email" });
   }
 }
