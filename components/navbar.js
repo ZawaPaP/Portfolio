@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './Navbar.module.css';
+import styles from './navbar.module.css';
 
 export default function Navbar() {
   const [isActive, setActive] = useState(false);
