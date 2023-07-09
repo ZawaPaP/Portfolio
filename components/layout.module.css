@@ -1,15 +1,36 @@
 .container {
-    max-width: 100%;
-    padding: 0 1rem;
-    margin: 0rem auto 6rem;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* ... other styles ... */
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
   }
-  
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .backToHome {
-    margin: 3rem 0 0;
-  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}

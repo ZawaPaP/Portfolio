@@ -1,52 +1,39 @@
 .navbar {
-    background-color: white;
-    color: black;
-  }
-  
-  .navbarBrand {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-  
-  .navbarBrand .navbarItem img {
-    max-height: 3rem;
-  }
-  
-  .navbarBurger {
-    cursor: pointer;
-  }
-  
-  .navbarBurger span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: black;
-    margin: 3px;
-  }
-  
-  .navbarMenu {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid gray;
+}
+
+.navbarBrand {
+  display: flex;
+  align-items: center;
+}
+
+.navbarItem {
+  margin-right: 1rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+.navbarItem:hover {
+  color: #333333;
+}
+
+.navbarBurger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar {
     display: none;
   }
-  
-  .navbarMenu.isActive {
+
+  .navbarItem {
+    display: none;
+  }
+
+  .navbarBurger {
     display: block;
   }
-  
-  .navbarEnd {
-    display: flex;
-    justify-content: space-around;
-    padding: 1rem;
-  }
-  
-  .navbarItem {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .navbarItem:hover {
-    color: blue;
-    text-decoration: underline;
-  }
-  
+}

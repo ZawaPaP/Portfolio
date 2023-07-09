@@ -11,6 +11,14 @@ export const siteTitle = 'Kazu portfolio';
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
+      <div className={styles.background}>
+        <Image
+          src="/images/starry_night.jpg"
+          layout="fill"
+          objectFit="cover"
+          alt="Starry Night by Vincent Van Gogh"
+        />
+      </div>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -18,7 +26,6 @@ export default function Layout({ children, home }) {
           content="Kazu's portfolio"
         />
         <meta name="og:title" content={siteTitle} />
-
       </Head>
       <Navbar />
       <header className={styles.header}>

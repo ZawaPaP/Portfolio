@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/layout';
 import Form from '../components/form';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedProjectsData } from '../lib/projects';
+import Image from 'next/image';
 
 export async function getStaticProps() {
   const allProjectsData = getSortedProjectsData();
@@ -13,10 +14,8 @@ export async function getStaticProps() {
   };
 }
 
-
 export default function Home({allProjectsData}) {
   return (
-    
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
@@ -34,16 +33,26 @@ export default function Home({allProjectsData}) {
       <section id="projects" className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Projects</h2>
         <ul className={utilStyles.list}>
-          {allProjectsData.map(({ id, date, title, link, skills,contentHtml}) => (
+          {allProjectsData.map(({ id, date, title, link, skills,contentHtml, screenshot}) => (
             <li className={utilStyles.listItem} key={id}>
-              {title} &nbsp; ({date})
+            <span className={utilStyles.boldTitle}>{title}</span> &nbsp; ({date})
               <br />
-              <p className={utilStyles.lightText}>
+              <p className={utilStyles.DarkGrayText}>
               {contentHtml}
               (<a href ={link}>Link</a>)
               <br />
               <span className={utilStyles.hushtag}>{skills}</span>
               </p>
+              {screenshot && (
+              <div className={utilStyles.projectImage}>
+                <Image
+                  src={screenshot}
+                  layout="responsive"
+                  width={400}
+                  height={200}
+                />
+              </div>
+            )}
             </li>
           ))}
         </ul>
