@@ -17,12 +17,12 @@
   .headingLg {
     font-size: 1.5rem;
     line-height: 1.4;
-    margin: 1rem 0;
+    margin: 1rem 0 0.5rem 0;
   }
   
   .headingMd {
     font-size: 1.2rem;
-    line-height: 1.5;
+    line-height: 1.2;
   }
   
   .borderCircle {
@@ -59,7 +59,7 @@
   
   .lightText {
     font-size: 1rem;
-    color: #666;
+    color: rgb(65, 64, 64);
   }
 
   .hushtag {

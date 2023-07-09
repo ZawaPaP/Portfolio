@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.navbarBrand}>
         <a href="/" className={styles.navbarItem}>
-          <img src="/logo.png" alt="Logo" />
+          <img src="/logo.png" alt="Logo" className={styles.navbarLogo}/>
         </a>
 
         <a

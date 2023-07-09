@@ -27,7 +27,7 @@ export default function Form() {
     };
 
     return (
-      <div className="container mt-5">
+      <div className="container mt-1">
         <form onSubmit={sendMail}>
           <div className="mb-3">
             <label htmlFor="email">email address</label>
