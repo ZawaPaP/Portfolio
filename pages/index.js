@@ -82,10 +82,6 @@ export default function Home({ allProjectsData }) {
           passionate about creating efficient, scalable web applications. Also,
           I'm always eager to take on new challenges and learn new technologies.
         </p>
-        <p className={utilStyles.lightText}>
-          Please feel free to browse my projects and contact me. I'm always open
-          to collaboration and new ideas.
-        </p>
       </section>
     </Layout>
   );
