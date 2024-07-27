@@ -74,13 +74,14 @@ export default function Home({ allProjectsData }) {
       >
         <h2 className={utilStyles.headingLg}>Profile</h2>
         <p className={utilStyles.lightText}>
-          With over 8 years of experience in the tech industry as account
-          manager, I've decided to change my career to engineer. I have
-          self-taught ComputerScience, DataStructure, Algorithm and python with
-          Cousera, created few simple applications and holding a Bachelor's
-          degree in environmental engineer in Hokkaido University. I'm
-          passionate about creating efficient, scalable web applications. Also,
-          I'm always eager to take on new challenges and learn new technologies.
+          With over 8 years of experience in the tech industry as Account
+          Manager, I have started the new career as software engineer since Mar
+          2024. I have self-taught ComputerScience, DataStructure, Algorithm and
+          python with Cousera, created few simple applications and holding a
+          Bachelor's degree in environmental engineer in Hokkaido University.
+          I'm passionate about creating efficient, scalable web applications.
+          Also, I'm always eager to take on new challenges and learn new
+          technologies.
         </p>
       </section>
     </Layout>
